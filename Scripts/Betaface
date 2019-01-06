@@ -1,0 +1,80 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+#Wave_Hair
+# Aaron_Kwok
+# Afro
+# Bald
+# Beehive
+# Bob
+# Bouffant
+# Bowl_Cut
+# Bun
+# Caesar
+# Chonmage
+# Comb_Over
+# Cornrows
+# Crew_Cut
+# Crop
+# Croydon_Facelift
+# Curly
+# Curly_Hair
+# Curtained_Hair
+# Cute_Ponytails
+# Devilock
+# Dreadlocks
+# Ducktail
+# Emo_hair
+# Fauxhawk
+# Flattop
+# French_Braid
+# French_Twist
+# Hi-top_Fade
+# Hime_Cut
+# Horseshoe_Flattop
+# Induction_Cut
+# Jimmy_Lin_Hairstyle
+# Layered_Hair
+# Liberty_Spikes_Hair
+# Long_Hair
+# Medium-Length_Hair
+# Men_Pompadour
+# Men_With_Square_Angles
+# Mohawk
+# Mop-Top_Hair
+# Mullet
+# Odango_Hair
+# Pageboy
+# Perm
+# Pixie_Cut
+# Ponytail
+# Quiff
+# Rattail
+# Razor_Cut
+# Ringlet
+# Shag
+# Shoulder-Length_Hair
+# Side_Part
+# Slicked-back
+# Spiky_Hair
+# Tapered_Sides
+# The_Rachel
+# Tonsure_Hair
+# Updo
+# Waist-Length_Hair
+
+TYPE="Bouffant"
+LIMIT="10"
+
+
+printf "[\n" >> $TYPE.json
+for ((i=1; i <= $LIMIT; i++)); do
+	curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Bouffant/IMG_$i.jpg\", \"detection_flags\": \"classifiers,extended\"}" >> $TYPE.json 
+	printf IMG_$i"\n"
+	printf ",\n" >> $TYPE.json	
+done
+sed -i "_bak" '$ s/,$//g' $TYPE.json
+printf "]\n" >> $TYPE.json
+exit
+
+
+
