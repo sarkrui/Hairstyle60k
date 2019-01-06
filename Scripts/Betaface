@@ -1,5 +1,22 @@
 #!/bin/sh
 cd "$(dirname "$0")"
+
+TYPE="Bouffant"
+LIMIT="10"
+
+
+printf "[\n" >> $TYPE.json
+for ((i=1; i <= $LIMIT; i++)); do
+	curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/$TYPE/IMG_$i.jpg\", \"detection_flags\": \"classifiers,extended\"}" >> $TYPE.json 
+	printf IMG_$i"\n"
+	printf ",\n" >> $TYPE.json	
+done
+sed -i "_bak" '$ s/,$//g' $TYPE.json
+printf "]\n" >> $TYPE.json
+exit
+
+
+#Supported TYPE
 #Wave_Hair
 # Aaron_Kwok
 # Afro
@@ -61,20 +78,3 @@ cd "$(dirname "$0")"
 # Tonsure_Hair
 # Updo
 # Waist-Length_Hair
-
-TYPE="Bouffant"
-LIMIT="10"
-
-
-printf "[\n" >> $TYPE.json
-for ((i=1; i <= $LIMIT; i++)); do
-	curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Bouffant/IMG_$i.jpg\", \"detection_flags\": \"classifiers,extended\"}" >> $TYPE.json 
-	printf IMG_$i"\n"
-	printf ",\n" >> $TYPE.json	
-done
-sed -i "_bak" '$ s/,$//g' $TYPE.json
-printf "]\n" >> $TYPE.json
-exit
-
-
-
