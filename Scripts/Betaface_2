@@ -1,0 +1,36 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+
+SCOPE="20" #Range [0] - [61]
+START="0" #Index range starts at "0"
+INDEX="1"
+
+declare -a STYLE=("Aaron_Kwok" "Afro" "Bald" "Beehive""Bob" "Bouffant" "Bowl_Cut" "Bun" "Caesar" "Chonmage" "Comb_Over" "Cornrows" "Crew_Cut" "Crop" "Croydon_Facelift" "Curly" "Curly_Hair" "Curtained_Hair" "Cute_Ponytails" "Devilock" "Dreadlocks" "Ducktail" "Emo_hair" "Fauxhawk" "Flattop" "French_Braid" "French_Twist" "Hi-top_Fade" "Hime_Cut" "Horseshoe_Flattop" "Induction_Cut" "Jimmy_Lin_Hairstyle" "Layered_Hair" "Liberty_Spikes_Hair" "Long_Hair" "Medium-Length_Hair" "Men_Pompadour" "Men_With_Square_Angles" "Mohawk" "Mop-Top_Hair" "Mullet" "Odango_Hair" "Pageboy" "Perm" "Pixie_Cut" "Ponytail" "Quiff" "Rattail" "Razor_Cut" "Ringlet" "Shag" "Shoulder-Length_Hair" "Side_Part" "Slicked-back" "Spiky_Hair" "Tapered_Sides" "The_Rachel" "Tonsure_Hair" "Updo" "Waist-Length_Hair" "Wave_Hair")
+declare -a COUNT=("105" "386" "66" "383" "603" "111" "203" "404" "103" "40" "47" "328" "205" "109" "50" "62" "926" "351" "490" "21" "652" "19" "67" "84" "310" "162" "78" "243" "90" "22" "81" "51" "249" "118" "11" "225" "99" "43" "104" "97" "184" "63" "259" "284" "499" "308" "22" "30" "381" "117" "411" "461" "92" "178" "368" "52" "33" "32" "108" "82" "254")
+
+for (( i = $START; i < $SCOPE; i++ )); do
+
+	INDEX="1"
+	
+	#insert a opening bracket JSON Array 
+	printf "[\n" >> ${STYLE[$i]}.json
+
+	for (( j = 0; j < ${COUNT[$i]}; j++ )); do
+
+		#printf "https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg"
+		curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg\", \"detection_flags\": \"classifiers,extended\"}" >> ${STYLE[$i]}.json
+		printf IMG_$INDEX"\n"
+		printf ",\n" >> ${STYLE[$i]}.json
+		let "INDEX+=1"
+	done
+
+	#Removing the comma one the last line
+	sed -i "_bak" '$ s/,$//g' ${STYLE[$i]}.json
+
+	#Insert a JSON Array closing bracket
+	printf "]\n" >> ${STYLE[$i]}.json
+
+done
+
+exit
+
