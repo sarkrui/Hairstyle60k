@@ -12,17 +12,19 @@ for (( i = 0; i < 61; i++ )); do
 	#Insert a opening bracket JSON Array 
 	printf "[\n" >> ${STYLE[$i]}.json
 
-	for (( j = 0; j < ${COUNT[$i]}; j++ )); do
+	for (( j = 0; j < ${COUNT[$i]} ; j++ )); do
 
 		#printf "https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg"
-		curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg\", \"detection_flags\": \"classifiers\"}" >> ${STYLE[$i]}.json
-		printf ${STYLE[$i]}_IMG_$j_INDEX_$INDEX"\n"
+		curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_${COUNT[$i]}.jpg\", \"detection_flags\": \"classifiers,extended\"}" >> ${STYLE[$i]}.json
+		printf ${STYLE[$i]}_IMG_$j_
+		printf INDEX_$INDEX"\n"
 		printf ",\n" >> ${STYLE[$i]}.json
 		let "INDEX+=1"
 
 	if [[ $INDEX -eq 480 ]]; then
 		afplay /System/Library/Sounds/Funk.aiff
 		read -p "Please reset your ip...Press [ENTER] to continute."
+		INDEX="1"
 	fi
 
 	done
