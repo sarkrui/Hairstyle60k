@@ -1,0 +1,43 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+declare -a FILE=("Aaron_Kwok.json" "Afro.json" "Bald.json" "Beehive.json" "Bob.json" "Bouffant.json" "Bowl_Cut.json" "Bun.json" "Caesar.json" "Chonmage.json" "Comb_Over.json" "Cornrows.json" "Crew_Cut.json" "Crop.json" "Croydon_Facelift.json" "Curly_Hair.json" "Curly.json" "Curtained_Hair.json" "Cute_Ponytails.json" "Devilock.json" "Dreadlocks.json" "Ducktail.json" "Emo_hair.json" "Fauxhawk.json" "Flattop.json" "French_Braid.json" "French_Twist.json" "Hi-top_Fade.json" "Hime_Cut.json" "Horseshoe_Flattop.json" "Induction_Cut.json" "Jimmy_Lin_Hairstyle.json" "Layered_Hair.json" "Liberty_Spikes_Hair.json" "Long_Hair.json" "Medium-Length_Hair.json" "Men_Pompadour.json" "Men_With_Square_Angles.json" "mergedJSON.json" "Mohawk.json" "Mop-Top_Hair.json" "Mullet.json" "Odango_Hair.json" "Pageboy.json" "Perm.json" "Pixie_Cut.json" "Ponytail.json" "Quiff.json" "Rattail.json" "Razor_Cut.json" "Ringlet.json" "Shag.json" "Shoulder-Length_Hair.json" "Side_Part.json" "Slicked-back.json" "Spiky_Hair.json" "Tapered_Sides.json" "The_Rachel.json" "Tonsure_Hair.json" "Updo.json" "Waist-Length_Hair.json" "Wave_Hair.json")
+cd [1_61_Kinds][23]
+rm mergedJSON.json
+touch tempJSON.json
+touch mergedJSON.json
+
+printf "[" > mergedJSON.json
+
+echo "How many JSON files your are going to merge?"
+read total
+for (( i = 0; i < $total; i++ )); do
+
+	cat ${FILE[$i]} > tempJSON.json
+	
+	#To remove 1st character in the first line
+	sed -i "_bak" '1s/^.//' tempJSON.json
+	
+	#To remove empty lines
+	sed -i "_bak" '/^[[:space:]]*$/d' tempJSON.json
+
+	#To remove the last line 
+	sed -i '' -e '$ d' tempJSON.json
+
+	printf "," >> tempJSON.json
+
+	cat tempJSON.json >> mergedJSON.json
+	
+	#sed 's/.$//' mergedJSON.json
+ 
+
+done
+	
+	#To remove empty lines
+	sed -i "_bak" '/^[[:space:]]*$/d' mergedJSON.json
+
+	#sed -i "_bak" '$ s/\]\\n/\,\/g' mergedJSON.json
+	sed -i "_bak" '$ s/,$//g' mergedJSON.json
+
+	printf "]" >> mergedJSON.json
+
+exit
