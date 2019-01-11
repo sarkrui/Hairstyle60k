@@ -21,7 +21,8 @@ for (( i = 0; i < 61; i++ )); do
 		printf ",\n" >> ${STYLE[$i]}.json
 		let "INDEX+=1"
 
-	if [[ $INDEX -eq 500 ]]; then
+	if [[ $INDEX -eq 480 ]]; then
+		afplay /System/Library/Sounds/Funk.aiff
 		read -p "Please reset your ip...Press [ENTER] to continute."
 	fi
 
