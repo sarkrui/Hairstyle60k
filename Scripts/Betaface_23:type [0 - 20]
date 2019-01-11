@@ -15,6 +15,7 @@ for (( i = $START; i < $SCOPE; i++ )); do
 	#insert a opening bracket JSON Array 
 	printf "[\n" >> ${STYLE[$i]}.json
 
+	#Only detech the first 23 images 
 	for (( j = 0; j < 23; j++ )); do
 
 		#printf "https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg"
