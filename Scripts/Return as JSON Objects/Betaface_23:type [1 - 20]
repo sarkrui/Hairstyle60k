@@ -16,7 +16,7 @@ for (( i = $START; i < $SCOPE; i++ )); do
 	for (( j = 0; j < 23; j++ )); do
 
 		#printf "https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg"
-		curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg\", \"detection_flags\": \"classifiers\"}" >> ${STYLE[$i]}/IMG_$INDEX.json
+		curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg\", \"detection_flags\": \"classifiers\"}" >> ${STYLE[$i]}_IMG_$INDEX.json
 		printf IMG_$INDEX"\n"
 		let "INDEX+=1"
 	done

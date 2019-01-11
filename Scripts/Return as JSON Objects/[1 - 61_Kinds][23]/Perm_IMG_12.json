@@ -1,0 +1,377 @@
+{
+  "media": {
+    "media_uuid": "3f875016-5360-43de-884b-6b3b410942a3",
+    "checksum": "6c3e17f9b2ca6b33bc57dfc993a5b5460e3a47dc567484708e30cc1afcc86304",
+    "faces": [
+      {
+        "face_uuid": "69ff89b0-1536-11e9-99c4-0cc47a6c4dbd",
+        "media_uuid": "3f875016-5360-43de-884b-6b3b410942a3",
+        "x": 318.36,
+        "y": 491.48,
+        "width": 245.4,
+        "height": 305.82,
+        "angle": 12.1756,
+        "detection_score": 1.0,
+        "points": [
+          {
+            "x": 228.82,
+            "y": 471.96,
+            "type": 512,
+            "name": "basic eye left"
+          },
+          {
+            "x": 336.56,
+            "y": 448.72,
+            "type": 768,
+            "name": "basic eye right"
+          },
+          {
+            "x": 207.87,
+            "y": 476.59,
+            "type": 1024,
+            "name": "basic eye left outer"
+          },
+          {
+            "x": 361.94,
+            "y": 443.61,
+            "type": 1280,
+            "name": "basic eye right outer"
+          },
+          {
+            "x": 249.74,
+            "y": 469.04,
+            "type": 1536,
+            "name": "basic eye left inner"
+          },
+          {
+            "x": 311.72,
+            "y": 455.58,
+            "type": 1792,
+            "name": "basic eye right inner"
+          },
+          {
+            "x": 255.46,
+            "y": 581.61,
+            "type": 2048,
+            "name": "basic mouth left"
+          },
+          {
+            "x": 360.7,
+            "y": 561.06,
+            "type": 2304,
+            "name": "basic mouth right"
+          },
+          {
+            "x": 272.89,
+            "y": 539.62,
+            "type": 2560,
+            "name": "basic nose tip"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 2816,
+            "name": "basic mouth center"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 3072,
+            "name": "basic eyebrow left"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 3328,
+            "name": "basic eyebrow left inner corner"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 3584,
+            "name": "basic eyebrow left outer corner"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 3840,
+            "name": "basic eyebrow right"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 4096,
+            "name": "basic eyebrow right inner corner"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 4352,
+            "name": "basic eyebrow right outer corner"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 4608,
+            "name": "basic chin bottom"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 4864,
+            "name": "basic chin left"
+          },
+          {
+            "x": 306.33,
+            "y": 574.82,
+            "type": 5120,
+            "name": "basic chin right"
+          },
+          {
+            "x": 255.54,
+            "y": 544.95,
+            "type": 5376,
+            "name": "basic nose left"
+          },
+          {
+            "x": 315.64,
+            "y": 532.94,
+            "type": 5632,
+            "name": "basic nose right"
+          }
+        ],
+        "user_points": null,
+        "tags": [
+          {
+            "name": "5oclock shadow",
+            "value": "no",
+            "confidence": 0.96
+          },
+          {
+            "name": "age",
+            "value": "40",
+            "confidence": 0.6
+          },
+          {
+            "name": "arched eyebrows",
+            "value": "yes",
+            "confidence": 0.27
+          },
+          {
+            "name": "attractive",
+            "value": "yes",
+            "confidence": 1.0
+          },
+          {
+            "name": "bags under eyes",
+            "value": "yes",
+            "confidence": 0.33
+          },
+          {
+            "name": "bald",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "bangs",
+            "value": "no",
+            "confidence": 0.59
+          },
+          {
+            "name": "beard",
+            "value": "no",
+            "confidence": 0.97
+          },
+          {
+            "name": "big lips",
+            "value": "yes",
+            "confidence": 0.38
+          },
+          {
+            "name": "big nose",
+            "value": "no",
+            "confidence": 0.19
+          },
+          {
+            "name": "black hair",
+            "value": "no",
+            "confidence": 0.47
+          },
+          {
+            "name": "blond hair",
+            "value": "no",
+            "confidence": 0.6
+          },
+          {
+            "name": "blurry",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "brown hair",
+            "value": "yes",
+            "confidence": 0.06
+          },
+          {
+            "name": "bushy eyebrows",
+            "value": "yes",
+            "confidence": 0.25
+          },
+          {
+            "name": "chubby",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "double chin",
+            "value": "no",
+            "confidence": 0.95
+          },
+          {
+            "name": "expression",
+            "value": "smile",
+            "confidence": 0.82
+          },
+          {
+            "name": "gender",
+            "value": "female",
+            "confidence": 0.99
+          },
+          {
+            "name": "glasses",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "goatee",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "gray hair",
+            "value": "no",
+            "confidence": 0.96
+          },
+          {
+            "name": "heavy makeup",
+            "value": "yes",
+            "confidence": 0.57
+          },
+          {
+            "name": "high cheekbones",
+            "value": "yes",
+            "confidence": 0.65
+          },
+          {
+            "name": "mouth open",
+            "value": "yes",
+            "confidence": 0.83
+          },
+          {
+            "name": "mustache",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "narrow eyes",
+            "value": "yes",
+            "confidence": 0.07
+          },
+          {
+            "name": "oval face",
+            "value": "no",
+            "confidence": 0.32
+          },
+          {
+            "name": "pale skin",
+            "value": "yes",
+            "confidence": 0.74
+          },
+          {
+            "name": "pitch",
+            "value": "-9.51",
+            "confidence": 1.0
+          },
+          {
+            "name": "pointy nose",
+            "value": "yes",
+            "confidence": 0.2
+          },
+          {
+            "name": "race",
+            "value": "white",
+            "confidence": 0.87
+          },
+          {
+            "name": "receding hairline",
+            "value": "no",
+            "confidence": 0.93
+          },
+          {
+            "name": "rosy cheeks",
+            "value": "no",
+            "confidence": 0.46
+          },
+          {
+            "name": "sideburns",
+            "value": "no",
+            "confidence": 1.0
+          },
+          {
+            "name": "straight hair",
+            "value": "no",
+            "confidence": 0.77
+          },
+          {
+            "name": "wavy hair",
+            "value": "yes",
+            "confidence": 0.69
+          },
+          {
+            "name": "wearing earrings",
+            "value": "yes",
+            "confidence": 0.08
+          },
+          {
+            "name": "wearing hat",
+            "value": "no",
+            "confidence": 0.43
+          },
+          {
+            "name": "wearing lipstick",
+            "value": "yes",
+            "confidence": 0.8
+          },
+          {
+            "name": "wearing necklace",
+            "value": "no",
+            "confidence": 0.03
+          },
+          {
+            "name": "wearing necktie",
+            "value": "no",
+            "confidence": 0.93
+          },
+          {
+            "name": "yaw",
+            "value": "10.19",
+            "confidence": 1.0
+          },
+          {
+            "name": "young",
+            "value": "yes",
+            "confidence": 0.78
+          }
+        ],
+        "person_id": "",
+        "appearance_id": 0,
+        "start": "00:00:00",
+        "duration": "00:00:00"
+      }
+    ],
+    "tags": null,
+    "original_filename": "https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/Perm/IMG_12.jpg",
+    "duration": "00:00:00"
+  },
+  "recognize": null
+}
