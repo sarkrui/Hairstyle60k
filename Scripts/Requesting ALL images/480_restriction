@@ -9,15 +9,14 @@ declare -a COUNT=("105" "386" "66" "383" "603" "111" "203" "404" "103" "40" "47"
 for (( i = 0; i < 61; i++ )); do
 
 	
-	#insert a opening bracket JSON Array 
+	#Insert a opening bracket JSON Array 
 	printf "[\n" >> ${STYLE[$i]}.json
 
-	#Only detech the first 23 images 
-	for (( j = 0; j < $COUNT; j++ )); do
+	for (( j = 0; j < ${COUNT[$i]}; j++ )); do
 
 		#printf "https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg"
 		curl -sS https://www.betafaceapi.com/api/v2/media -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"api_key\": \"d45fd466-51e2-4701-8da8-04351c872236\", \"file_uri\": \"https://raw.githubusercontent.com/sarkrui/Hairstyle60k/master/Dataset/${STYLE[$i]}/IMG_$INDEX.jpg\", \"detection_flags\": \"classifiers\"}" >> ${STYLE[$i]}.json
-		printf ${STYLE[$i]}_IMG_$INDEX"\n"
+		printf ${STYLE[$i]}_IMG_$j_INDEX_$INDEX"\n"
 		printf ",\n" >> ${STYLE[$i]}.json
 		let "INDEX+=1"
 
