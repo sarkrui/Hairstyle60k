@@ -1,0 +1,19 @@
+[{
+  "faceRectangle": {
+    "top": 342,
+    "left": 293,
+    "width": 214,
+    "height": 214
+  },
+  "faceAttributes": {
+    "glasses": "NoGlasses",
+    "facialHair": {
+      "sideburns": 0,
+      "beard": 0,
+      "moustache": 0
+    },
+    "gender": "female",
+    "age": 18
+  },
+  "faceId": "90a1d283-b411-4b62-ba6e-de186e532c0d"
+}]
